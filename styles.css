@@ -1,0 +1,372 @@
+/* Responsive Navbar */
+.navbar {
+    background-color: #fff;
+    border: none;
+    margin: 0;
+    border-radius: 0;
+    position: sticky;
+    margin-bottom: 10px;
+}
+.navbar-header .navbar-brand img {
+    height: 40px;
+    margin-right: 50px;
+    margin-bottom: 10px;
+}
+.navbar .navbar-right {
+    font-size: 14px;
+    color: #555;
+    padding: 15px 20px;
+}
+.navbar .navbar-right .glyphicon {
+    margin-right: 5px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.main-container {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space out content and form */
+    align-items: flex-start; /* Align items at the top */
+    background-image: url('Images/123.png'); /* Background image */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Avoid repeating the image */
+    width: 100%;
+    height: 446px; /* Fixed height */
+    padding: 30px 50px; /* Add padding */
+    box-sizing: border-box; /* Ensure padding doesn't affect size */
+    position: relative;
+}
+
+.content-section {
+    color: black;
+    max-width: 50%;
+    margin-top: 0; /* Reset top margin */
+}
+
+.content-section h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #f20790; /* Pink heading */
+    margin-bottom: 10px;
+}
+
+.content-section p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.form-section {
+    background-color: #f20790; /* Semi-transparent purple */
+    padding: 10px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add shadow */
+    margin-top: 20px; /* Space from the top */
+}
+
+.form-section h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-control {
+    margin-bottom: 15px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.btn-pink {
+    background-color: #ab1c7f ; /* Pink button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.btn-pink:hover {
+    background-color: #e62e85;
+}
+
+.form-note {
+    font-size: 12px;
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+/* Responsive Fix for Small Screens */
+@media (max-width: 992px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .content-section {
+        max-width: 90%;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    .form-section {
+        max-width: 90%;
+    }
+}
+
+/* Services Section */
+.services-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+.services-section h2 {
+    font-size: 28px;
+    color: #f20790;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Service Items */
+.row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.services-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 150px;
+    margin: 15px;
+}
+
+.services-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    padding: 5px;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.services-item img:hover {
+    transform: scale(1.1);
+}
+
+/* Button */
+.btn-consult {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #f20790;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-consult:hover {
+    background-color: #c412a6;
+}
+.background-section {
+    background-color:#9fd2c9;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: black;
+    padding-top: 20px;
+}
+.background-section h2 {
+    color: black;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+.background-section p{
+    padding-top: 20px;
+}
+.image-container {
+    position: relative;
+}
+.image-container img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.image-overlay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 80%; /* Adjust as needed */
+    z-index: 2;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    overflow: hidden;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+ /* Book Now Button Styling */
+ .book-now-btn {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color:#f20790 ; /* Pinkish-red */
+    color: white;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    writing-mode: vertical-rl; /* Vertical text */
+    text-align: center;
+    border-radius: 5px 0 0 5px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.book-now-btn:hover {
+    background-color: #c2185b; /* Darker shade on hover */
+}
+/*FAQs*/
+.faq-section {
+    padding: 40px 20px;
+}
+.faq-section h2 {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Panel Styling */
+.panel-group .panel {
+    background-color: #eef7f8;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.panel-heading {
+    background-color: #eef7f8;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+}
+.panel-heading a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    display: block;
+    position: relative;
+}
+.panel-heading a:after {
+    content: '\f107'; /* Down Arrow (Font Awesome) */
+    font-family: FontAwesome;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #333;
+}
+
+.panel-body {
+    background-color: #fff;
+    color: #555;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+}
+.features {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #9fd2c9;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    width: 45%; /* Two per row */
+    margin-bottom: 20px;
+}
+
+.feature img {
+    width: 60px; /* Adjust size */
+    height: 60px;
+    margin-right: 10px;
+}
+
+.feature p {
+    color: black;
+}
+.container1 { 
+    height: 60px;
+    position: relative; 
+  }
+  
+  .center1 {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  .footer {
+    background-color: #9fd2c9;
+    padding: 30px 0;
+    color: black;
+}
+.footer h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+.footer p, .footer a {
+    color: black;
+    font-size: 14px;
+    text-decoration: none;
+}
+.footer a:hover {
+    color: #f39c12;
+}
+.social-icons a {
+    margin: 0 10px;
+    font-size: 18px;
+    color: #fff;
+}
+.social-icons a:hover {
+    color: #f39c12;
+}
+.footer .map {
+    margin-top: 15px;
+}
