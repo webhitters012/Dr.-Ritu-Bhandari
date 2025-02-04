@@ -31,7 +31,7 @@ body {
     display: flex; /* Use flexbox for alignment */
     justify-content: space-between; /* Space out content and form */
     align-items: flex-start; /* Align items at the top */
-    background-image: url('Images/123.png'); /* Background image */
+    background-image: url('Images/1234.png'); /* Background image */
     background-size: cover; /* Cover the entire container */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Avoid repeating the image */
@@ -218,6 +218,9 @@ body {
     z-index: 2;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.img-fluid{
+    margin-top: 70px;
 }
 .map-container {
     position: relative;
