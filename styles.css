@@ -354,6 +354,9 @@ body {
 .abc{
     color: #f20790;
 }
+.bed{
+    font-family: 'Times New Roman', serif;
+}
 
 
 /* Responsive Fix for Small Screens */
