@@ -374,12 +374,20 @@ body {
     }
     .services-section h2 {
         font-size: 24px;
+        align-items: center;
+        text-align: center;
     }
     .services-item {
-        max-width: 120px;
+        max-width: 110px;
     }
     .btn-consult {
         font-size: 14px;
+    }
+    .background-section, .hez{
+        text-align: center;
+    }
+    .hez ul {
+        text-align: left !important;
     }
 }
 
