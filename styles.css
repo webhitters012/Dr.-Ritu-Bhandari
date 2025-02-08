@@ -6,14 +6,16 @@
     border-radius: 0;
     position: sticky;
     margin-bottom: 10px;
+    height: 80px;
 }
 .navbar-header .navbar-brand img {
-    height: 40px;
+    height: 70px;
     margin-right: 50px;
     margin-bottom: 10px;
 }
 .navbar .navbar-right {
     font-size: 14px;
+    margin-top: 20px;
     color: #555;
     padding: 15px 20px;
 }
@@ -36,7 +38,7 @@ body {
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Avoid repeating the image */
     width: 100%;
-    height: 446px; /* Fixed height */
+    height: 550px; /* Fixed height */
     padding: 30px 50px; /* Add padding */
     box-sizing: border-box; /* Ensure padding doesn't affect size */
     position: relative;
@@ -64,9 +66,10 @@ body {
     background-color: #f20790; /* Semi-transparent purple */
     padding: 10px;
     border-radius: 10px;
-    width: 300px;
+    width: 350px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add shadow */
-    margin-top: 20px; /* Space from the top */
+    margin-top: 80px; /* Space from the top */
+    
 }
 
 .form-section h2 {
@@ -122,6 +125,7 @@ body {
 
     .form-section {
         max-width: 90%;
+        margin-top: 0px;
     }
 }
 
@@ -133,7 +137,7 @@ body {
 }
 
 .services-section h2 {
-    font-size: 28px;
+    font-size: 36px;
     color: #f20790;
     margin-bottom: 30px;
     font-weight: bold;
@@ -253,6 +257,7 @@ body {
     border-radius: 5px 0 0 5px;
     transition: background-color 0.3s ease;
     display: inline-block;
+    z-index:999;
 }
 
 .book-now-btn:hover {
@@ -345,31 +350,128 @@ body {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
-  .footer {
+  
+.abc{
+    color: #f20790;
+}
+
+
+/* Responsive Fix for Small Screens */
+@media (max-width: 992px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+    .content-section {
+        max-width: 90%;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    .form-section {
+        max-width: 90%;
+    }
+    .services-section h2 {
+        font-size: 24px;
+    }
+    .services-item {
+        max-width: 120px;
+    }
+    .btn-consult {
+        font-size: 14px;
+    }
+}
+
+/* Additional Mobile Optimization */
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        padding: 10px;
+    }
+    .navbar-header .navbar-brand img {
+        height: 50px;
+        margin-right: 20px;
+    }
+    .navbar .navbar-right {
+        font-size: 12px;
+        padding: 10px;
+    }
+    .content-section h1 {
+        font-size: 28px;
+    }
+    .content-section p {
+        font-size: 16px;
+    }
+    .form-section {
+        width: 100%;
+    }
+    .services-item img {
+        width: 80px;
+        height: 80px;
+    }
+}
+.footer {
     background-color: #9fd2c9;
     padding: 30px 0;
     color: black;
 }
-.footer h4 {
-    font-size: 16px;
+
+.footer h3 {
+    font-size: 20px;
     margin-bottom: 15px;
 }
+
 .footer p, .footer a {
     color: black;
-    font-size: 14px;
+    font-size: 17px;
     text-decoration: none;
 }
+
 .footer a:hover {
     color: #f39c12;
 }
-.social-icons a {
-    margin: 0 10px;
-    font-size: 18px;
-    color: #fff;
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
 }
-.social-icons a:hover {
-    color: #f39c12;
+
+.social-icons a img {
+    width: 28px;
+    height: 28px;
 }
+
 .footer .map {
     margin-top: 15px;
+}
+
+.footer .map iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .footer .container {
+        text-align: center;
+    }
+
+    .footer .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer .col-md-3 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .social-icons {
+        flex-direction: row;
+    }
 }
