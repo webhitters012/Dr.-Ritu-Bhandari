@@ -44,12 +44,18 @@
         <!-- Right Section -->
         <div class="form-section appointment-form">
             <h2>Book Appointment & Explore!</h2>
-            <form>
+            <form action="form.php" method="POST">
                 <input name="Name" type="text" class="form-control" placeholder="Name*" required>
                 <input name="Phone Number" type="text" class="form-control" placeholder="Phone Number*" required>
                 <input name="Email" type="email" class="form-control" placeholder="Email" required>
+            
+                <!-- CAPTCHA -->
+                <img src="captcha.php" alt="CAPTCHA Image" onerror="this.onerror=null; this.src='fallback.png';">
+                <input name="captcha" type="text" class="form-control" placeholder="Enter CAPTCHA*" required>
+            
                 <button type="submit" class="btn btn-pink">Book An Appointment</button>
             </form>
+            
             <p class="form-note">
                 *We respect your privacy and don't share your personal information with anyone.
             </p>
@@ -206,7 +212,7 @@
         <div class="row align-items-center background-section">
             <!-- Image Section -->
             <div class="col-md-4 text-center">
-                <img src="Images/2.png" alt="Doctor" class="img-fluid">
+                <img src="Images/Dr2.png" alt="Doctor" class="deg">
                 <p class="bed"><b>I am a Certified Lactational Consultant <br>(Breast Feeding Speacialist)</b></p>
             </div>
             <!-- Text Section -->

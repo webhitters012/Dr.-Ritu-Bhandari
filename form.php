@@ -4,7 +4,14 @@ use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php'; // Ensure PHPMailer is installed via Composer
 
+session_start();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (!isset($_POST['captcha']) || $_POST['captcha'] !== $_SESSION['captcha_code']) {
+        echo "Captcha verification failed!";
+        exit;
+    }
+
     $name = htmlspecialchars($_POST['Name']);
     $phone = htmlspecialchars($_POST['Phone Number']);
     $email = htmlspecialchars($_POST['Email']);
@@ -14,16 +21,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         // Server settings
         $mail->isSMTP();
-        $mail->Host = 'smtp.example.com'; // Replace with your SMTP server
+        $mail->Host = 'https://drritubhandari.in/'; // Replace with your SMTP server
         $mail->SMTPAuth = true;
-        $mail->Username = 'your-email@example.com'; // Replace with your email
-        $mail->Password = 'your-email-password'; // Replace with your email password
+        $mail->Username = 'enquiry@drritubhandari.in'; // Replace with your email
+        $mail->Password = 'OTy7}Y$%#-te'; // Replace with your email password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
-
-        // Recipients
-        $mail->setFrom('your-email@example.com', 'Your Name'); // Replace with your email & name
-        $mail->addAddress('recipient@example.com', 'Recipient Name'); // Replace with recipient email & name
 
         // Content
         $mail->isHTML(true);
