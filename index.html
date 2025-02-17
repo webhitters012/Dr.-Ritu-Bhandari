@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Women's Health Design</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
     <script src="form.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     
 </head>
 <body>
@@ -30,7 +32,7 @@
         </div>
     </nav>
 <!--Sticky Whatsapp-->
-<a  class="whats-app" href="https://api.whatsapp.com/send?phone=917696086560" target="_blank">
+<a  class="whats-app" href="https://wa.link/mw8ora" target="_blank">
     <i class="fa fa-whatsapp my-float"></i>
 </a>
 
@@ -50,8 +52,9 @@
                 <input name="Email" type="email" class="form-control" placeholder="Email" required>
             
                 <!-- CAPTCHA -->
-                <img src="captcha.php" alt="CAPTCHA Image" onerror="this.onerror=null; this.src='fallback.png';">
-                <input name="captcha" type="text" class="form-control" placeholder="Enter CAPTCHA*" required>
+                <div class="g-recaptcha" 
+                data-sitekey="6Lc0pNMqAAAAAFkWAlFGLRKAjBlJwc7ZwAZSRvCb">
+                </div>
             
                 <button type="submit" class="btn btn-pink">Book An Appointment</button>
             </form>
@@ -64,7 +67,7 @@
     <!-- Book Now Button -->
     <a href="tel:7347081693" class="book-now-btn">Call Us</a>
     <!--Services--> 
-    <section class="services-section">
+    <section class="services-section" id="services">
         <div class="container">
             <h2>Services</h2>
             <h3><b>General Gynecological Care</b></h3>
@@ -427,20 +430,19 @@
                     <p>Monday - Saturday</p>
                     <p>Morning &nbsp &nbsp10 AM - 1 PM</p>
                     <p>Evening &nbsp &nbsp6 PM - 8 PM</p>
-                    <p><b>On Sunday Appointments Only</b></p>
+                    <img src="Images/Logo1.png" alt="Logo" class="efg"> 
                 </div>
                 <div class="col-md-3">
                     <h3 style="color: #f20790">Our Services</h3>
-                    <p class="bed">General Gyneacological Care</p>
-                    <p class="bed">Pregnancy and Reproductive Health</p>
-                    <p class="bed">Hormonal and Menopause Care</p>
-                    <p class="bed">Gynaecological Conditions and Treatments</p>
+                    <a href= "#services" class="bed">General Gyneacological Care</a><br>
+                    <a href= "#services" class="bed">Pregnancy and Reproductive Health</a><br>
+                    <a href= "#services" class="bed">Hormonal and Menopause Care</a><br>
+                    <a href= "#services" class="bed">Gynaecological Conditions and Treatments</a>
                 </div>
                 <div class="col-md-3">
                     <h3 style="color: #f20790">Address</h3>
                     <p>122A, ground floor, Green Enclave Rd, near EcoKids school,<br>
                         Badal Colony, Zirakpur, Punjab 140603</p>
-                    <br>
                     <h3 style="color: #f20790">Phone Number</h3>
                     <a href="tel:7347081693">+91 73470-81693</a>
                 </div>
@@ -451,7 +453,11 @@
                     </div>
                 </div>
             </div>
-            <br> <br>
+            <br>
+            <div class="row">
+                <h4 style="color: #f20790">On Sunday Appointments Only</h4> 
+            </div>
+            <br>
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="social-icons">

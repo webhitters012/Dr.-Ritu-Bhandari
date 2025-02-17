@@ -7,16 +7,39 @@ require 'vendor/autoload.php'; // Ensure PHPMailer is installed via Composer
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (!isset($_POST['captcha']) || $_POST['captcha'] !== $_SESSION['captcha_code']) {
+    $recaptcha_secret = "6Lc0pNMqAAAAADI2fPCmnF3CyiZX4LXyOy8C5Ycd"; // Replace with your Google reCAPTCHA Secret Key
+    $recaptcha_response = $_POST['g-recaptcha-response']; // Get response token from form
+
+    // Verify Google reCAPTCHA
+    $url = "https://www.google.com/recaptcha/api/siteverify";
+    $data = [
+        'secret' => $recaptcha_secret,
+        'response' => $recaptcha_response
+    ];
+
+    $options = [
+        'http' => [
+            'header'  => "Content-Type: application/x-www-form-urlencoded\r\n",
+            'method'  => 'POST',
+            'content' => http_build_query($data)
+        ]
+    ];
+    $context  = stream_context_create($options);
+    $verify = file_get_contents($url, false, $context);
+    $captcha_success = json_decode($verify);
+
+    if (!$captcha_success->success) {
         echo "Captcha verification failed!";
         exit;
     }
 
-    $name = htmlspecialchars($_POST['Name']);
-    $phone = htmlspecialchars($_POST['Phone Number']);
-    $email = htmlspecialchars($_POST['Email']);
+    // Sanitize Input Fields
+    $name = htmlspecialchars($_POST['name']);
+    $phone = htmlspecialchars($_POST['phone']);
+    $email = htmlspecialchars($_POST['email']);
 
     $mail = new PHPMailer(true);
+
 
     try {
         // Server settings
@@ -27,6 +50,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Password = 'OTy7}Y$%#-te'; // Replace with your email password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
+
+        $mail->addAddress('dr.ritu.bhandari1@gmail.com');
 
         // Content
         $mail->isHTML(true);
