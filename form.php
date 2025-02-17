@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
-        $mail->addAddress('dr.ritu.bhandari1@gmail.com');
+        $mail->addAddress('enquiry@drritubhandari.in');
 
         // Content
         $mail->isHTML(true);
