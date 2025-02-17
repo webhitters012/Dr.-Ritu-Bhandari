@@ -30,34 +30,31 @@ body {
 }
 
 .main-container {
-    display: flex;
-    flex-wrap: wrap; /* Allows stacking on smaller screens */
-    justify-content: center; /* Center content */
-    align-items: center;
-    background-image: url('Images/12333.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space out content and form */
+    align-items: flex-start; /* Align items at the top */
+    background-image: url('Images/12333.png'); /* Background image */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Avoid repeating the image */
     width: 100%;
-    min-height: 550px; /* Adjust for smaller screens */
-    padding: 20px; /* Added padding */
-    box-sizing: border-box;
+    height: 550px; /* Fixed height */
+    box-sizing: border-box; /* Ensure padding doesn't affect size */
     position: relative;
-    gap: 20px; /* Space between elements */
 }
 
-/* Left Section */
 .content-section {
     color: black;
-    max-width: 600px; /* Prevents stretching */
-    text-align: left;
-    margin: 0; /* Removes negative margin */
+    max-width: 100%;
+    margin-top: 0; /* Reset top margin */
+    margin-left: -200px;
+    gap: 700px;
 }
 
 .content-section h1 {
     font-size: 36px;
     font-weight: bold;
-    color: #f20790;
+    color: #f20790; /* Pink heading */
     margin-bottom: 10px;
 }
 
@@ -66,32 +63,67 @@ body {
     margin-top: 10px;
 }
 
-/* Right Section */
 .form-section {
-    background-color: #f20790;
-    padding: 20px;
+    background-color: #f20790; /* Semi-transparent purple */
+    padding: 10px;
     border-radius: 10px;
-    width: 100%;
-    max-width: 350px; /* Prevents stretching */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add shadow */
+    margin-top: 80px; /* Space from the top */    
+    margin-right: -200px;
+}
+
+.form-section h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
     text-align: center;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+.form-control {
+    margin-bottom: 15px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.btn-pink {
+    background-color: #ab1c7f ; /* Pink button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.btn-pink:hover {
+    background-color: #e62e85;
+}
+
+.form-note {
+    font-size: 12px;
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+/* Responsive Fix for Small Screens */
+@media (max-width: 992px) {
     .main-container {
-        flex-direction: column; /* Stacks content on mobile */
+        flex-direction: column; /* Stack elements */
+        align-items: center; /* Center content */
         text-align: center;
     }
 
     .content-section {
-        max-width: 100%; /* Uses full width */
-        text-align: center; /* Center text on small screens */
+        margin-left: 0; /* Reset negative margin */
+        text-align: center;
     }
 
     .form-section {
-        max-width: 100%; /* Uses full width */
-        padding: 15px;
+        margin-right: 0; /* Reset negative margin */
     }
 }
 
