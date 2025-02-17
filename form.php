@@ -2,7 +2,12 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'vendor/autoload.php'; // Ensure PHPMailer is installed via Composer
+// Base files
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+
+//require 'vendor/autoload.php'; // Ensure PHPMailer is installed via Composer
 
 session_start();
 
@@ -48,21 +53,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->SMTPAuth = true;
         $mail->Username = 'enquiry@drritubhandari.in'; // Replace with your email
         $mail->Password = 'OTy7}Y$%#-te'; // Replace with your email password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
         $mail->addAddress('enquiry@drritubhandari.in');
 
         // Content
-        $mail->isHTML(true);
+        $mail->isHTML(false);
         $mail->Subject = 'New Appointment Request';
         $mail->Body = "<h3>Appointment Details</h3>
                       <p><strong>Name:</strong> $name</p>
                       <p><strong>Phone:</strong> $phone</p>
                       <p><strong>Email:</strong> $email</p>";
 
-        $mail->send();
-        echo 'Message has been sent successfully!';
+        //$mail->send();
+        //echo 'Message has been sent successfully!';
+
+	if ($mail->send()) {
+            // Success message
+            echo "<script>alert('Thanks for submitting your query - unicodesigns.co.in');</script>";
+        } else {
+            echo "<script>alert('There was an error sending your message. Please try again later.');</script>";
+        }
+
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
