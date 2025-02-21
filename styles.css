@@ -22,6 +22,9 @@
     margin-right: 5px;
 }
 @media (max-width: 768px) {
+    html{
+        width:100%;
+    }
     .navbar {
         height: auto;
         text-align: center;
@@ -85,7 +88,6 @@ body {
     color: black;
     max-width: 100%;
     margin-top: 0; /* Reset top margin */
-    margin-left: -200px;
     gap: 700px;
 }
 
@@ -96,9 +98,10 @@ body {
     margin-bottom: 10px;
 }
 
-.content-section p {
-    font-size: 18px;
+.content-section h3 {
+    font-size: 26px;
     margin-top: 10px;
+    margin-left: 90px;
 }
 
 .form-section {
@@ -108,7 +111,6 @@ body {
     width: 350px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add shadow */
     margin-top: 80px; /* Space from the top */    
-    margin-right: -200px;
 }
 
 .form-section h2 {
@@ -163,6 +165,9 @@ body {
 
     .form-section {
         margin-right: 0; /* Reset negative margin */
+    }
+    .content-section h3 {
+        margin-left: 0;
     }
 }
 
@@ -516,27 +521,7 @@ body {
     border: none;
 }
 
-/* Responsive Design for Mobile */
-@media (max-width: 768px) {
-    .footer .container {
-        text-align: center;
-    }
 
-    .footer .row {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer .col-md-3 {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .social-icons {
-        flex-direction: row;
-    }
-}
 .efg{
     height: 100px;
 }
@@ -557,4 +542,28 @@ body {
 }
 .my-float {
     margin-top: 16px;
+}
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .footer .container {
+        text-align: center;
+    }
+
+    .footer .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer .col-md-3 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .social-icons {
+        flex-direction: row;
+    }
+    .whats-app{
+        display:none;
+    }
 }
